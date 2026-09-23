@@ -33,13 +33,18 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end gap-4">
-    <button className='flex gap-1'> <p className='text-gray-300'>Plan</p>
+    <button className='flex gap-1'> 
+        <Link href="/my-plan">
+       <p className='text-gray-300'>Plan</p>
+        </Link>
     <Link href="/my-plan" className="rounded-full bg-[#ccff00] text-black px-2  font-semibold">
     0
     </Link>
     </button>
     <button className='gap-1 flex'>
+        <Link href="/my-plan">
         <p className='text-gray-300'>Saved</p>
+        </Link>
         <Link href="/my-plan"className="rounded-full border border-[#ccff00] px-2  font-semibold">
          0
         </Link>
