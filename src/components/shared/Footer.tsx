@@ -5,7 +5,7 @@ import logo from "@/assets/logo.png";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-10">
+            <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center border-t-gray-700 border p-10 lg:px-20 lg:py-10">
   <aside className="grid-flow-col items-center">
     <Image
      src={logo}
