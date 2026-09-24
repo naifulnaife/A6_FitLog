@@ -9,7 +9,7 @@ const Navbar = () => {
     const { plan, saved } = usePlan();
     return (
         <div className='sticky top-0 z-50'>
-            <div className="navbar bg-neutral text-neutral-content shadow-sm px-10 lg:px-20 border-b-gray-700 border">
+            <div className="navbar bg-neutral text-neutral-content shadow-sm px-2 sm:px-10 lg:px-20 border-b-gray-700 border">
   
   <div className="navbar-start">
     <div className="dropdown">
@@ -26,7 +26,7 @@ const Navbar = () => {
      <Image 
      src={logo}
      alt='logo' />
-     <h1 className='font-bold text-2xl mx-2'>FITLOG</h1>
+     <h1 className='font-bold text-lg sm:text-2xl lg:text-2xl mx-2'>FITLOG</h1>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-2">
