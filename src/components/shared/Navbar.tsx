@@ -30,8 +30,8 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-2">
-      <Link href="/" className={pathname === "/" ? "text-[#ccff00]" : ""} > Workouts </Link>
-       <Link href="/my-plan" className={ pathname === "/my-plan" ? "text-[#ccff00]" : "" } > My Plan </Link>
+      <Link href="/" className={pathname === "/" ? "text-[#ccff00] bg-[#ccff00]/20 rounded-2xl p-2" : "p-2"} > Workouts </Link>
+       <Link href="/my-plan" className={ pathname === "/my-plan" ? "text-[#ccff00] bg-[#ccff00]/20 rounded-2xl p-2" : "p-2" } > My Plan </Link>
     </ul>
   </div>
   <div className="navbar-end gap-4">

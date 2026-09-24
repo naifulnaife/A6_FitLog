@@ -1,12 +1,19 @@
 import type { IWorkout } from "@/types/workout";
 import WorkoutActions from "@/components/WorkoutActions";
 import Image from "next/image";
-
+import { notFound } from "next/navigation";
 interface PageProps {params: Promise<{ id: string }>;}
 
 const WorkoutDetails = async ({ params }: PageProps) => {
 const { id } = await params;
-const response = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
+const response = await fetch(
+  `https://api.abcz.workers.dev/api/fitlog/${id}`
+);
+
+if (!response.ok) {
+  notFound();
+}
+
 const workout: IWorkout = await response.json();
 
   return (
@@ -22,23 +29,23 @@ const workout: IWorkout = await response.json();
     
         <div>
 
-          <div className="flex gap-2 flex-wrap mb-5">
-            {workout.muscleGroups.map((group) => (
-              <span key={group} className="badge bg-[#ccff00] text-black border-none">
-                {group}
-              </span> ))}
-          </div>
+          
 
 
           
           <h1 className="text-4xl lg:text-5xl font-bold mb-5"> {workout.name}</h1>
           <p className="text-gray-400 leading-7 mb-8">{workout.description}</p>
-
+<div className="flex gap-2 flex-wrap mb-5">
+            {workout.muscleGroups.map((group) => (
+              <span key={group} className="badge bg-[#ccff00] text-black border-none">
+                {group}
+              </span> ))}
+          </div>
           <div className="rounded-xl bg-gray-900 text-white overflow-hidden">
 
            
             <div className="flex justify-between items-center px-5 py-4 border-b border-gray-800">
-              <p className="text-xs text-gray-500 uppercase">
+              <p className="text-xs text-gray-300 uppercase">
                 Equipment
               </p>
               <p className="text-sm">
@@ -46,7 +53,7 @@ const workout: IWorkout = await response.json();
               </p>
             </div>
             <div className="flex justify-between items-center px-5 py-4 border-b border-gray-800">
-              <p className="text-xs text-gray-500 uppercase">
+              <p className="text-xs text-gray-300 uppercase">
                 Difficulty
               </p>
               <p className="text-sm">
@@ -54,7 +61,7 @@ const workout: IWorkout = await response.json();
               </p>
             </div>
             <div className="flex justify-between items-center px-5 py-4 border-b border-gray-800">
-              <p className="text-xs text-gray-500 uppercase">
+              <p className="text-xs text-gray-300 uppercase">
                 Sets
               </p>
               <p className="text-sm">
@@ -62,7 +69,7 @@ const workout: IWorkout = await response.json();
               </p>
             </div>
             <div className="flex justify-between items-center px-5 py-4 border-b border-gray-800">
-              <p className="text-xs text-gray-500 uppercase">
+              <p className="text-xs text-gray-300 uppercase">
                 Reps
               </p>
               <p className="text-sm">
@@ -70,7 +77,7 @@ const workout: IWorkout = await response.json();
               </p>
             </div>
             <div className="flex justify-between items-center px-5 py-4 border-b border-gray-800">
-              <p className="text-xs text-gray-500 uppercase">
+              <p className="text-xs text-gray-300 uppercase">
                 Duration
               </p>
               <p className="text-sm">
@@ -78,7 +85,7 @@ const workout: IWorkout = await response.json();
               </p>
             </div>
             <div className="flex justify-between items-center px-5 py-4 border-b border-gray-800">
-              <p className="text-xs text-gray-500 uppercase">
+              <p className="text-xs text-gray-300 uppercase">
                 Calories
               </p>
               <p className="text-sm">
@@ -86,7 +93,7 @@ const workout: IWorkout = await response.json();
               </p>
             </div>
             <div className="flex justify-between items-center px-5 py-4">
-              <p className="text-xs text-gray-500 uppercase">
+              <p className="text-xs text-gray-300 uppercase">
                 Rating
               </p>
 

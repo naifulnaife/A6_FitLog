@@ -34,7 +34,7 @@ import { Clock3, Flame, Star } from "lucide-react";
           MY PLAN
         </h1>
         <p className="text-gray-400 mt-2">
-          Your workouts, organized and ready to go.
+          Cap of five lifts for today. Finish them, then load more.
         </p>
       </div>
 
@@ -98,18 +98,9 @@ import { Clock3, Flame, Star } from "lucide-react";
             }
             className="px-3 py-2 rounded-lg bg-[#11141a] border border-gray-800 text-gray-300 text-sm outline-none">
 
-            <option value="duration">
-              Duration
-            </option>
-
-            <option value="calories">
-              Calories
-            </option>
-
-            <option value="rating">
-              Rating
-            </option>
-
+            <option value="duration">Duration </option>
+            <option value="calories">Calories</option>
+            <option value="rating"> Rating</option>
           </select>
 
         </div>
