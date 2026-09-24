@@ -3,8 +3,10 @@ import Image from 'next/image';
 import logo from "@/assets/logo.png";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { usePlan } from "@/context/PlanContext";
 const Navbar = () => {
     const pathname = usePathname();
+    const { plan, saved } = usePlan();
     return (
         <div className='sticky top-0 z-50'>
             <div className="navbar bg-neutral text-neutral-content shadow-sm px-10 lg:px-20 border-b-gray-700 border">
@@ -38,7 +40,7 @@ const Navbar = () => {
        <p className='text-gray-300'>Plan</p>
         </Link>
     <Link href="/my-plan" className="rounded-full bg-[#ccff00] text-black px-2  font-semibold">
-    0
+   {plan.length}
     </Link>
     </button>
     <button className='gap-1 flex'>
@@ -46,7 +48,7 @@ const Navbar = () => {
         <p className='text-gray-300'>Saved</p>
         </Link>
         <Link href="/my-plan"className="rounded-full border border-[#ccff00] px-2  font-semibold">
-         0
+        {saved.length}
         </Link>
     </button>
     
