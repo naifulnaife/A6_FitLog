@@ -5,7 +5,7 @@ const NotFound = () => {
     <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
       <div className="text-center">
 
-        <p className="text-[#ccff00] text-sm font-semibold mb-3">
+        <p className="text-[#ccff00] text-xl font-semibold mb-3 ">
           404
         </p>
 

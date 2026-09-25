@@ -16,16 +16,11 @@ import { Clock3, Flame, Star } from "lucide-react";
   const totalExercises = currentWorkouts.length;
   const totalMinutes =currentWorkouts.reduce( (total, workout) =>  total + workout.duration, 0);
   const totalCalories = currentWorkouts.reduce(  (total, workout) =>   total + workout.caloriesBurned, 0 );
-  const sortedWorkouts =[...currentWorkouts].sort((a, b) => {
-
-      if (sortBy === "duration") {
-        return a.duration - b.duration; }
-      if (sortBy === "calories") {
-        return ( a.caloriesBurned -b.caloriesBurned);
-      }
-
-      return a.rating - b.rating;
-    });
+  const sortedWorkouts = [...currentWorkouts].sort((a, b) => {
+  if (sortBy === "duration") return b.duration - a.duration;
+  if (sortBy === "calories") return b.caloriesBurned - a.caloriesBurned;
+  return b.rating - a.rating;
+});
 
   return (
     <main className="min-h-svh px-10 lg:px-20 py-10 bg-black text-white">
